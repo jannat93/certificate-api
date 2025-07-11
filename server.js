@@ -34,15 +34,6 @@ app.get("/certificates", (req, res) => {
 });
 
 
-const publicationStorage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'publications'); // Folder for publications
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.originalname);
-  }
-});
-const uploadPublication = multer({ storage: publicationStorage });
 
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
